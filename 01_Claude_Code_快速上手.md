@@ -34,7 +34,19 @@ source: https://www.xuanyuancode.com/learn-claude-code/tutorials/cu1
 
 ## 一張圖看快速上手流程
 
-載入圖表中...
+
+```mermaid
+flowchart TD
+    A[🔧 安裝 Claude Code] --> B[📂 進入專案目錄]
+    B --> C[🚀 啟動 claude]
+    C --> D[💬 描述你的任務]
+    D --> E[🤖 Claude 讀取程式碼並修改]
+    E --> F[✅ 執行命令驗證結果]
+    F --> G{確認結果?}
+    G -->|繼續迭代| D
+    G -->|完成| H[🎉 任務完成]
+```
+
 
 ## 最基本的使用步驟
 
@@ -378,7 +390,17 @@ ls
 
 ## 最穩妥的起步姿勢
 
-載入圖表中...
+
+```mermaid
+flowchart LR
+    A[進入專案目錄] --> B[啟動 claude]
+    B --> C[先讓它理解專案]
+    C --> D[讓它提出方案]
+    D --> E[確認方案]
+    E --> F[執行並驗證]
+    F --> G[小步迭代]
+```
+
 
 ## 小結
 
