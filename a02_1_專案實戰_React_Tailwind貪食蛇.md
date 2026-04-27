@@ -32,7 +32,23 @@ claude
 > 
 > 確認後再幫我自動建立，並且在根目錄生成一份合適的 `CLAUDE.md`，把「不要隨意新增外部套件」、「元件放 src/components」等規範寫進去。
 
-**這個步驟的重點**：讓 Claude 自動執行 `npm create vite@latest` 等繁瑣的終端機指令，並幫你打好專案地基。
+執行完畢後，你會在根目錄看到一份生成的 `CLAUDE.md`，內容大約會長這樣：
+
+```markdown
+# CLAUDE.md (專案規範)
+
+## 專案目標
+- React + Tailwind 打造的網頁版貪食蛇遊戲
+
+## 開發規則
+- 不要隨意新增 npm 套件
+- 元件統一放在 src/components
+- 樣式限用 Tailwind CSS
+- 保持程式碼簡單清楚，避免過度工程化
+- **重要**：任何修改前必須先說明實作思路，等我確認後再動手
+```
+
+**這個步驟的重點**：讓 Claude 自動執行 `npm create vite@latest` 等繁瑣的終端機指令，並透過 `CLAUDE.md` 立刻確立專案的「憲法」。
 
 ---
 
