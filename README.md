@@ -4,14 +4,14 @@
 
 ## 📌 官方文件與補充資料（建議先讀）
 
-- [官方快速入門](00_官方快速入門.md) — [原文](https://code.claude.com/docs/quickstart)（含安裝指令、登入、基本命令速查表）
-- [OpenAI Compatible API 設定](a01_openai_compatiable_api.md) — OpenRouter / NCHC 自架端點環境變數設定
-- [專案實戰：React + Tailwind 貪食蛇](a02_1_專案實戰_React_Tailwind貪食蛇.md) — 新手村實戰，從零開始的小步迭代示範
-- [專案實戰：會議錄音轉逐字稿網站](a02_2_專案實戰_會議錄音轉逐字稿網站.md) — 中階實戰，結合 Plan Mode 與 Gemini API 串接
-- [Skills 撰寫與實戰範例](a03_Skills撰寫與實戰範例.md) — 學習如何建立自定義 Skill 擴充 Claude Code 能力
-- [專案實戰：影片自動化處理與特效 (FFmpeg Skill)](a04_專案實戰_影片自動化處理與特效_FFmpeg_Skill.md) — 進階 Skill 實戰，全自動影音後製流
-- [專案實戰：使用 Guizang PPT Skill 製作雜誌風簡報](a05_專案實戰_使用Guizang_PPT_Skill製作雜誌風簡報.md) — 高階 Skill 實戰，產出高品質結構化簡報
-- [OpenClaw 完整安裝與 Telegram 串接教學](a06_OpenClaw完整安裝與Telegram串接教學.md) — 終極整合，將 Claude Code 變成你的隨身電報助理
+- [官方快速入門](00_官方快速入門.md) — [原文](https://code.claude.com/docs/quickstart)（安裝、登入、基本命令速查表）
+- [OpenAI Compatible API 設定](a01_openai_compatiable_api.md) — 如何在各種環境下配置自定義 API 端點
+- [專案實戰：React + Tailwind 貪食蛇](a02_1_專案實戰_React_Tailwind貪食蛇.md) — **「新手村實戰」**：從小步迭代開始，打造你的第一個網頁遊戲
+- [專案實戰：會議錄音轉逐字稿網站](a02_2_專案實戰_會議錄音轉逐字稿網站.md) — **「中階挑戰」**：結合 Plan Mode 與 Gemini API，挑戰全端應用開發
+- [Skills 撰寫與實戰範例](a03_Skills撰寫與實戰範例.md) — **「賦予超能力」**：學習 Skills 系統，教 Claude 學會原本不會的新把戲
+- [專案實戰：影片自動化處理與特效 (FFmpeg Skill)](a04_專案實戰_影片自動化處理與特效_FFmpeg_Skill.md) — **「影音指揮官」**：活用專業工具，讓 Claude 幫你全自動後製影音
+- [專案實戰：使用 Guizang PPT Skill 製作雜誌風簡報](a05_專案實戰_使用Guizang_PPT_Skill製作雜誌風簡報.md) — **「說服力武器」**：用雜誌風簡報，向世界發佈你的開發成果
+- [OpenClaw 完整安裝與 Telegram 串接教學](a06_OpenClaw完整安裝與Telegram串接教學.md) — **「大結局」**：將 AI Agent 裝進口袋，實現 24 小時在線的個人助理
 
 
 ## 學習 Claude Code 使用

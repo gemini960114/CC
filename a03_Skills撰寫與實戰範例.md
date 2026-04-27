@@ -4,9 +4,16 @@ section: 補充資料
 source: https://agentskills.io/specification
 ---
 
-# Skills 撰寫與實戰範例
+# Skills 撰寫與實戰範例：教 Claude 學會新把戲
 
-> **Skills** 是 Claude Code 的可重複使用指令模組。透過在專案中放置 `SKILL.md` 檔案，可以讓 Agent 學會特定的工具使用方式、命令格式或工作流程，無需每次重複說明。
+恭喜你！你已經學會了如何讓 Claude Code 幫你寫出漂亮的 React 專案。但你有沒有想過，有些任務是 Claude 原本「不會」或「不敢做」的？
+
+例如：
+- **一鍵部署**：讓它輸入 `/deploy` 就自動跑完所有部署流程。
+- **規則校對**：讓它自動檢查你的專案命名是否符合特定的技術規範。
+- **專屬工具**：讓它學會如何操作你公司內部的特殊 CLI 工具。
+
+這就是 **Skills** 存在的意義。它是 Claude Code 的「插件系統」。透過在專案中建立簡單的 Markdown 檔案（`SKILL.md`），你就能賦予 Claude **自定義的 Slash 命令**（例如 `/check-api`），讓它學會特定的工具使用方式或工作流程，無需每次重複說明。
 
 ---
 
