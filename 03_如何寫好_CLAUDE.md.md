@@ -32,10 +32,8 @@ source: https://www.xuanyuancode.com/learn-claude-code/tutorials/cu3
 
 ```mermaid
 flowchart LR
-    A[開始] --> B[Claude Code 處理]
-    B --> C[Tool 執行]
-    C --> D[結果輸出]
-    D --> E[完成]
+    A[沒有 CLAUDE.md] --> B[每次都要重複解釋] --> C[輸出風格不穩定]
+    D[寫好 CLAUDE.md] --> E[約束長期生效]    --> F[輸出更穩定、更貼合專案]
 ```
 
 
