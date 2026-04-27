@@ -6,12 +6,6 @@ source: https://www.xuanyuancode.com/learn-claude-code/tutorials/cu4
 
 # Claude Code 進階使用經驗分享
 
-學習 Claude Code 使用
-
-00
-
-# Claude Code 進階使用經驗分享
-
 ## 從“會用”到“用得順”，靠的是工作流
 
 很多人剛開始用 Claude Code 時，會覺得它很強。  

@@ -6,12 +6,6 @@ source: https://www.xuanyuancode.com/learn-claude-code/tutorials/cu2
 
 # Claude Code 常用命令
 
-學習 Claude Code 使用
-
-00
-
-# Claude Code 常用命令
-
 ## 先記住一個最重要的動作
 
 在 Claude Code 裡，直接輸入 `/`，就能看到當前可用的全部命令。  
@@ -31,17 +25,17 @@ flowchart TD
     ROOT --> D[專案與記憶]
     ROOT --> E[擴展與整合]
     A --> A1["/clear /resume /exit /rename"]
-    B --> B1["/plan /diff /pr-comments /tasks"]
+    B --> B1["/plan /diff /review /commit /tasks"]
     C --> C1["/config /status /model /permissions /theme"]
     D --> D1["/init /memory /context"]
     E --> E1["/mcp /plugin /ide /remote-control"]
 ```
 
 
-## 新手最值得先掌握的 15 個命令
+## 新手最值得先掌握的 17 個命令
 
 如果你剛開始用 Claude Code，不需要一上來記住幾十個命令。  
-先掌握這 15 個就夠用了：
+先掌握這 17 個就夠用了：
 
 | 命令 | 用途 | 建議 |
 | --- | --- | --- |
@@ -55,6 +49,8 @@ flowchart TD
 | `/permissions` | 檢視或更新許可權 | 控制工具是否允許執行 |
 | `/plan` | 進入計劃模式 | 大任務先規劃再執行 |
 | `/diff` | 看當前改動差異 | 改完程式碼後非常有用 |
+| `/review` | 讓 Claude 審查剛寫好的程式碼 | 提交前確保品質 |
+| `/commit` | 自動生成訊息並提交 | 完成一輪開發的完美收尾 |
 | `/memory` | 管理 `CLAUDE.md` 和記憶 | 專案長期約束都在這 |
 | `/context` | 檢視上下文佔用情況 | 長對話後排查上下文問題 |
 | `/resume` | 恢復之前會話 | 接著上次繼續做 |
@@ -123,6 +119,22 @@ flowchart TD
 - Claude 每一輪產生的差異
 
 這比單純問“你改了什麼”可靠得多。
+
+### `/review`
+
+讓 Claude 以 Code Reviewer 的視角，重新審視剛剛寫好的程式碼。  
+它會幫你檢查：
+- 潛在的 Bug
+- 邊界條件遺漏
+- 效能或安全風險
+
+在提交程式碼前執行一次，能大幅提高程式碼品質。
+
+### `/commit [message]`
+
+將當前未提交的改動進行 Git Commit。  
+如果不加訊息，Claude 會根據改動自動幫你生成一段合適的 Commit Message。  
+這通常作為一輪開發任務的最後一步。
 
 ### `/tasks`
 
@@ -384,7 +396,7 @@ flowchart LR
 flowchart LR
     S1[第 1 步] --> S1C["/help /clear /resume"]
     S2[第 2 步] --> S2C["/config /status /model /usage /cost"]
-    S3[第 3 步] --> S3C["/plan /diff /permissions /compact"]
+    S3[第 3 步] --> S3C["/plan /diff /review /commit /permissions /compact"]
     S4[第 4 步] --> S4C["/memory /init /rewind"]
     S5[第 5 步] --> S5C["/mcp /plugin /hooks /remote-control"]
 ```

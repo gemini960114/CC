@@ -6,12 +6,6 @@ source: https://www.xuanyuancode.com/learn-claude-code/tutorials/cu3
 
 # 如何寫好 CLAUDE.md
 
-學習 Claude Code 使用
-
-00
-
-# 如何寫好 CLAUDE.md
-
 ## `CLAUDE.md` 是什麼
 
 `CLAUDE.md` 可以理解成 Claude Code 的專案記憶檔案。  

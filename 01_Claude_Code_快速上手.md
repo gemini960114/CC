@@ -6,12 +6,6 @@ source: https://www.xuanyuancode.com/learn-claude-code/tutorials/cu1
 
 # Claude Code 快速上手
 
-學習 Claude Code 使用
-
-00
-
-# Claude Code 快速上手
-
 ## 它最適合什麼人
 
 如果你已經有一點點終端基礎，想把 AI 真正帶進本地專案開發裡，Claude Code 是非常值得上手的工具。

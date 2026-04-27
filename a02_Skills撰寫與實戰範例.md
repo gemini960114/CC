@@ -235,88 +235,56 @@ API 根網址：https://pokeapi.co/api/v2/
 
 ---
 
-## 範例三：影片處理 Skill（ffmpeg）
+## 範例三：指令封裝（ffmpeg）
 
-### 安裝
+這類 Skill 的核心概念是：將複雜的終端機指令（如 `ffmpeg` 長串參數）封裝起來，讓 Agent 只要理解使用者的意圖，就能自動寫出正確的指令。
+
+**安裝方式：**
 
 ```bash
 npx skills add https://github.com/digitalsamba/claude-code-video-toolkit --skill ffmpeg
 ```
 
-### 能做什麼
+**適用情境：**
+只要是終端使用者記不住、寫不好的長串指令（例如影片轉檔、壓浮水印、製作縮時攝影、燒錄字幕），都可以寫成這類 Skill 來輔助 Agent。
 
-#### 🎬 視覺效果類
+> [!TIP]
+> 關於這項工具如何進行自動化影音後製的完整案例與指令清單，請參考進階實戰篇：
+> 👉 **[`a06_專案實戰_影片自動化處理與特效_FFmpeg_Skill.md`](./a06_專案實戰_影片自動化處理與特效_FFmpeg_Skill.md)**
 
-| 功能 | 說明 |
-|------|------|
-| 縮時攝影（Timelapse） | 將大量照片合成為高畫質縮時影片 |
-| 時光倒流（Reverse） | 將影片完全倒著播放 |
-| 浮水印批量覆蓋 | 一次將 Logo 壓在所有影片的指定位置 |
-| 畫中畫（PiP） | 將小影片疊加在主影片的角落 |
-| 動態模糊 | 為快速移動的影片增加電影感動態模糊 |
-| 影片防震修復 | 使用 `vidstab` 濾鏡穩定晃動畫面 |
-| 綠幕去背（Chroma Key） | 將綠幕背景換成任意圖片或影片 |
-| 九宮格監控牆 | 將 9 段影片拼成 3×3 大畫面 |
+---
 
-#### 🎵 音訊後製類
+## 範例四：複雜工作流與範本應用（guizang-ppt-skill）
 
-| 功能 | 說明 |
-|------|------|
-| 音訊波形視覺化 | 產生隨音樂跳動的動態波形影片 |
-| 人聲增強 | 放大細微聲音、壓縮爆音 |
-| 背景音樂混音 | 疊加背景音樂並自動調低音量 |
-| 多語言音軌 | 為影片加入多條音軌（中/英/日等） |
+當 Skill 的任務不僅僅是執行單一指令，而是要產出整份專案或文件時，我們可以利用 `assets/` 與 `references/` 目錄來提供範本與查核清單。
 
-#### 📱 格式轉換類
+**核心概念**：Agent 不用從零開始寫程式碼，而是**複製範本 → 讀取參考規範 → 填充內容 → 進行自我檢查**。
 
-| 功能 | 說明 |
-|------|------|
-| 高畫質 GIF | 調色盤優化技術，色彩豐富流暢 |
-| ASCII 藝術影片 | 將影片轉為文字符號風格 |
-| 影片自動旋轉 | 修正手機拍攝的直式影片 |
-| 臉部/車牌模糊 | 自動對特定區域打馬賽克 |
+### 目錄結構運用
 
-#### 🛠️ 工具與自動化類
-
-| 功能 | 說明 |
-|------|------|
-| 每秒截圖 | 將長影片拆解成數百張圖片 |
-| 元資料清理 | 刪除 GPS 位置、相機型號等隱私資訊 |
-| 自動分段 | 按檔案大小（如每段 25MB）切割 |
-| 燒錄字幕（Hardsub） | 將 .srt 字幕永久嵌入影片 |
-
-### 實際使用範例
-
-**Workspace Rule 設定（`.claude/CLAUDE.md`）：**
-```
-本系統已內建 `uv`，所有 Python 開發請先用 `uv` 建立 venv，並在該環境下操作。
+```text
+guizang-ppt-skill/
+├── SKILL.md              # 定義 6 步工作流與互動問答
+├── assets/
+│   └── template.html     # 完整可運行的網頁簡報範本（含 CSS / WebGL）
+└── references/
+    ├── layouts.md        # 提供 10 種版面 HTML 骨架供 Agent 挑選
+    └── checklist.md      # P0~P3 的自我檢查清單（如：是否擅加未定義的 CSS）
 ```
 
-**需求：下載圖片並製作投影片播放影片**
+### 實際使用範例與工作流
 
-```
-1. 請先用 uv 建立 venv，進行 Python 開發
-2. 從網路隨機下載 10 張高品質圖片至本地資料夾 web_photos
-3. 把 web_photos 製作成簡報播放影片，照片間隔 2 秒，轉場需有 0.5 秒淡出特效
-```
+當使用者觸發 `幫我做一份雜誌風 PPT` 時，Agent 會根據 `SKILL.md` 的指示，展開結構化的工作流：
 
-Agent 執行流程：
-```mermaid
-flowchart TD
-    A[uv venv 建立環境] --> B[pip install requests pillow]
-    B --> C[Python 腳本下載 10 張圖片至 web_photos/]
-    C --> D[ffmpeg 讀取圖片序列]
-    D --> E["設定 -framerate 與淡入淡出濾鏡\nfade=t=out:st=1.5:d=0.5"]
-    E --> F[輸出 slideshow.mp4]
-```
+1. **需求澄清**：Agent 主動提問（受眾、時長、素材、主題色）。
+2. **拷貝範本**：Agent 將 `assets/template.html` 複製到專案目錄。
+3. **填充內容**：Agent 參考 `references/layouts.md`，挑選適合的版面骨架並填入文案。
+4. **品質自檢**：Agent 打開 `references/checklist.md`，自行核對產出的程式碼是否符合 P0 級別的要求（例如：有沒有破壞響應式設計）。
 
-對應 ffmpeg 命令參考：
-```bash
-ffmpeg -framerate 1/2 -pattern_type glob -i 'web_photos/*.jpg' \
-  -vf "scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2,\
-       fade=t=out:st=1.5:d=0.5" \
-  -c:v libx264 -pix_fmt yuv420p slideshow.mp4
-```
+> [!TIP]
+> 這種設計模式大幅降低了 Agent 產生幻覺（Hallucination）的機率，因為它是在「受控的框架」與「標準作業程序（SOP）」下進行填空與修改。
+> 
+> 👉 **完整的實戰演練與教學，請參考系列文章：[`a05_專案實戰_使用Guizang_PPT_Skill製作雜誌風簡報.md`](./a05_專案實戰_使用Guizang_PPT_Skill製作雜誌風簡報.md)**
 
 ---
 
@@ -379,9 +347,10 @@ flowchart LR
 |------|------|----------|
 | **命令封裝** | 將複雜指令封裝為簡單呼叫 | roll-dice、ffmpeg 操作 |
 | **API 導引** | 教 Agent 如何呼叫外部 API | pokeapi、GitHub API |
-| **工作流程** | 定義多步驟的標準流程 | 測試→建置→部署 |
+| **工作流程** | 定義多步驟的標準流程 | 測試→建置→部署、guizang-ppt-skill |
 | **環境設定** | 告知專案的工具鏈與規範 | uv venv、Docker 使用規則 |
 | **資料格式** | 說明輸入輸出的資料結構 | JSON 解析、CSV 處理 |
+| **模板生成** | 透過種子範本與規範生成複雜專案 | guizang-ppt-skill |
 
 ---
 
