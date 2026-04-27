@@ -24,11 +24,17 @@ source: https://www.xuanyuancode.com/learn-claude-code/tutorials/cu2
 
 
 ```mermaid
-flowchart LR
-    A[開始] --> B[Claude Code 處理]
-    B --> C[Tool 執行]
-    C --> D[結果輸出]
-    D --> E[完成]
+flowchart TD
+    ROOT[Claude Code 命令] --> A[會話控制]
+    ROOT --> B[開發執行]
+    ROOT --> C[配置與狀態]
+    ROOT --> D[專案與記憶]
+    ROOT --> E[擴展與整合]
+    A --> A1["/clear /resume /exit /rename"]
+    B --> B1["/plan /diff /pr-comments /tasks"]
+    C --> C1["/config /status /model /permissions /theme"]
+    D --> D1["/init /memory /context"]
+    E --> E1["/mcp /plugin /ide /remote-control"]
 ```
 
 
@@ -250,10 +256,10 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    A[開始] --> B[Claude Code 處理]
-    B --> C[Tool 執行]
-    C --> D[結果輸出]
-    D --> E[完成]
+    A[長對話 / 大專案任務] --> B["/context"]
+    B --> C[可視化上下文佔用]
+    C --> D[發現膨脹來源]
+    D --> E[決定是否 /compact 或重開任務]
 ```
 
 
@@ -376,10 +382,11 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    A[開始] --> B[Claude Code 處理]
-    B --> C[Tool 執行]
-    C --> D[結果輸出]
-    D --> E[完成]
+    S1[第 1 步] --> S1C["/help /clear /resume"]
+    S2[第 2 步] --> S2C["/config /status /model /usage /cost"]
+    S3[第 3 步] --> S3C["/plan /diff /permissions /compact"]
+    S4[第 4 步] --> S4C["/memory /init /rewind"]
+    S5[第 5 步] --> S5C["/mcp /plugin /hooks /remote-control"]
 ```
 
 
