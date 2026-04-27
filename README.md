@@ -5,12 +5,13 @@
 ## 📌 官方文件與補充資料（建議先讀）
 
 - [官方快速入門](00_官方快速入門.md) — [原文](https://code.claude.com/docs/quickstart)（含安裝指令、登入、基本命令速查表）
-- [OpenAI Compatible API 設定](a01_openai_compatiable_api.md) — OpenRouter / NCHC 自架端點環境變數設定（含 Windows PowerShell 版本）
-- [Skills 撰寫與實戰範例](a02_Skills撰寫與實戰範例.md) — 抽籤 / API 引導 / 工作流與範本應用，附撰寫原則
-- [專案實戰：會議錄音轉逐字稿網站](a03_專案實戰_會議錄音轉逐字稿網站.md) — 結合 Plan、Review、Diff 的完整進階工作流示範
-- [OpenClaw 完整安裝與 Telegram 串接教學](a04_OpenClaw完整安裝與Telegram串接教學.md) — 從零架設個人 AI 助理與通訊軟體綁定
-- [專案實戰：使用 Guizang PPT Skill 製作雜誌風簡報](a05_專案實戰_使用Guizang_PPT_Skill製作雜誌風簡報.md) — 體驗結構化 6 步工作流，產出高品質單頁 HTML 簡報
-- [專案實戰：影片自動化處理與特效 (FFmpeg Skill)](a06_專案實戰_影片自動化處理與特效_FFmpeg_Skill.md) — 結合 Python 與 FFmpeg 進行影音全自動後製
+- [OpenAI Compatible API 設定](a01_openai_compatiable_api.md) — OpenRouter / NCHC 自架端點環境變數設定
+- [專案實戰：React + Tailwind 貪食蛇](a02_1_專案實戰_React_Tailwind貪食蛇.md) — 新手村實戰，從零開始的小步迭代示範
+- [專案實戰：會議錄音轉逐字稿網站](a02_2_專案實戰_會議錄音轉逐字稿網站.md) — 中階實戰，結合 Plan Mode 與 Gemini API 串接
+- [Skills 撰寫與實戰範例](a03_Skills撰寫與實戰範例.md) — 學習如何建立自定義 Skill 擴充 Claude Code 能力
+- [專案實戰：影片自動化處理與特效 (FFmpeg Skill)](a04_專案實戰_影片自動化處理與特效_FFmpeg_Skill.md) — 進階 Skill 實戰，全自動影音後製流
+- [專案實戰：使用 Guizang PPT Skill 製作雜誌風簡報](a05_專案實戰_使用Guizang_PPT_Skill製作雜誌風簡報.md) — 高階 Skill 實戰，產出高品質結構化簡報
+- [OpenClaw 完整安裝與 Telegram 串接教學](a06_OpenClaw完整安裝與Telegram串接教學.md) — 終極整合，將 Claude Code 變成你的隨身電報助理
 
 
 ## 學習 Claude Code 使用
