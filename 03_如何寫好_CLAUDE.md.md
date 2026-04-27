@@ -63,17 +63,17 @@ flowchart LR
 ```
 # 專案說明
 
-- 這是一個 Next.js + TypeScript 專案
-- 樣式使用 Tailwind CSS
-- 頁面放在 app/ 目錄
-- 公共元件放在 components/ 目錄
+- 這是一個 Vite + React + Tailwind 專案
+- 核心目標是開發網頁版貪食蛇
+- 遊戲邏輯放在 src/hooks/ 目錄
+- UI 元件放在 src/components/ 目錄
 
 # 開發規範
 
 - 優先複用已有元件
-- 不要隨意新增依賴
+- 不要隨意新增外部依賴（如需加入音效庫請先詢問）
 - 變數命名使用 camelCase
-- 修改後執行 build 檢查
+- 修改後請確保 npm run dev 能夠正常執行
 
 # 常用命令
 
@@ -83,8 +83,8 @@ flowchart LR
 
 # 注意事項
 
-- 不要修改 legacy/ 目錄
-- 涉及支付邏輯時先給方案，不要直接改
+- 不要修改 public/ 裡的原始素材
+- 涉及蛇的「碰撞與死亡判定」邏輯時，請先給我方案，不要直接修改程式碼
 ```
 
 ## 寫 `CLAUDE.md` 的一個原則
