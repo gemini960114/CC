@@ -392,13 +392,16 @@ ls
 
 
 ```mermaid
-flowchart LR
-    A[進入專案目錄] --> B[啟動 claude]
-    B --> C[先讓它理解專案]
-    C --> D[讓它提出方案]
-    D --> E[確認方案]
-    E --> F[執行並驗證]
-    F --> G[小步迭代]
+sequenceDiagram
+    participant 你
+    participant Claude Code
+
+    你->>Claude Code: 先幫我理解這個專案結構
+    Claude Code-->>你: 彙總關鍵目錄和模組
+    你->>Claude Code: 給出功能實現方案，先不要動程式碼
+    Claude Code-->>你: 輸出步驟與檔案清單
+    你->>Claude Code: 可以開始改，改完請執行 build
+    Claude Code-->>你: 完成修改並彙報驗證結果
 ```
 
 
