@@ -10,10 +10,15 @@ export ANTHROPIC_BASE_URL="https://openrouter.ai/api"
 export ANTHROPIC_AUTH_TOKEN="$OPENROUTER_API_KEY"
 export ANTHROPIC_API_KEY=""  # 必須明確設為空字串
 
-export ANTHROPIC_DEFAULT_OPUS_MODEL="nvidia/nemotron-3-super-120b-a12b:free"
-export ANTHROPIC_DEFAULT_SONNET_MODEL="nvidia/nemotron-3-super-120b-a12b:free"
-export ANTHROPIC_DEFAULT_HAIKU_MODEL="nvidia/nemotron-3-super-120b-a12b:free"
-export CLAUDE_CODE_SUBAGENT_MODEL="nvidia/nemotron-3-super-120b-a12b:free"
+#export ANTHROPIC_DEFAULT_OPUS_MODEL="nvidia/nemotron-3-super-120b-a12b:free"
+#export ANTHROPIC_DEFAULT_SONNET_MODEL="nvidia/nemotron-3-super-120b-a12b:free"
+#export ANTHROPIC_DEFAULT_HAIKU_MODEL="nvidia/nemotron-3-super-120b-a12b:free"
+#export CLAUDE_CODE_SUBAGENT_MODEL="nvidia/nemotron-3-super-120b-a12b:free"
+
+export ANTHROPIC_DEFAULT_OPUS_MODEL="anthropic/claude-opus-4.7"
+export ANTHROPIC_DEFAULT_SONNET_MODEL="anthropic/claude-sonnet-4.6"
+export ANTHROPIC_DEFAULT_HAIKU_MODEL="anthropic/claude-haiku-4.5"
+export CLAUDE_CODE_SUBAGENT_MODEL="anthropic/claude-sonnet-4.6"
 ```
 
 ### Windows（PowerShell）
@@ -24,10 +29,15 @@ $env:ANTHROPIC_BASE_URL = "https://openrouter.ai/api"
 $env:ANTHROPIC_AUTH_TOKEN = $env:OPENROUTER_API_KEY
 $env:ANTHROPIC_API_KEY = ""  # 必須明確設為空字串
 
-$env:ANTHROPIC_DEFAULT_OPUS_MODEL  = "nvidia/nemotron-3-super-120b-a12b:free"
-$env:ANTHROPIC_DEFAULT_SONNET_MODEL = "nvidia/nemotron-3-super-120b-a12b:free"
-$env:ANTHROPIC_DEFAULT_HAIKU_MODEL  = "nvidia/nemotron-3-super-120b-a12b:free"
-$env:CLAUDE_CODE_SUBAGENT_MODEL     = "nvidia/nemotron-3-super-120b-a12b:free"
+#$env:ANTHROPIC_DEFAULT_OPUS_MODEL  = "nvidia/nemotron-3-super-120b-a12b:free"
+#$env:ANTHROPIC_DEFAULT_SONNET_MODEL = "nvidia/nemotron-3-super-120b-a12b:free"
+#$env:ANTHROPIC_DEFAULT_HAIKU_MODEL  = "nvidia/nemotron-3-super-120b-a12b:free"
+#$env:CLAUDE_CODE_SUBAGENT_MODEL     = "nvidia/nemotron-3-super-120b-a12b:free"
+
+$env:ANTHROPIC_DEFAULT_OPUS_MODEL  = "anthropic/claude-opus-4.7"
+$env:ANTHROPIC_DEFAULT_SONNET_MODEL = "anthropic/claude-sonnet-4.6"
+$env:ANTHROPIC_DEFAULT_HAIKU_MODEL  = "anthropic/claude-haiku-4.5"
+$env:CLAUDE_CODE_SUBAGENT_MODEL     = "anthropic/claude-sonnet-4.6"
 ```
 
 ---
